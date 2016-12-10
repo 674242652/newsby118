@@ -11,7 +11,7 @@ namespace WebApplication4.front
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            btn_login.PostBackUrl = @"~/front/login.aspx";
         }
     }
 }

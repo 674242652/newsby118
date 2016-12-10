@@ -16,45 +16,57 @@
 	    
 		.myNavWrap{
 			height: 28px;width: 100%;
-			background-color: #0EA5E3;
+			background-color: #EEECEC;
+            border-bottom: 1px solid #e9e9e9;
 		}
 		.myNav{
 			height:100%;
+
 		}
 		.myNav ul{
-			float: left;list-style: none;
+            list-style: none;
+            display:inline-block;
 		}
 		.myNav ul li{
-			float: right;
-            width: 80px;
+            width: 60px;
             height: 28px;
+            display:inline-block;
             line-height: 28px
 			/*padding: 10px 10px 10px 10px;*/
 		}
 		.myNav ul li a{
 			text-decoration: none;
-            color: black;
+            color: #5c5c5c;
 		}
+        .myNav ul li a:hover{
+            cursor:pointer;
+            color:#000;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
 
-    </form>
+    
 
     <div class="myNavWrap">
 		<!-- <div class="row"> -->
 			<div class = "col-md-6 col-center-block myNav">
 				<ul>
+                    <li><a>首页</a></li>
 					<li><a>国外</a></li>
 					<li><a>国内</a></li>
-					<li><a>首页</a></li>
 				</ul>
+                <div style="float:right;display:inline-block;line-height:28px;">
+                    <asp:LinkButton ID="btn_login" runat="server">登陆</asp:LinkButton>
+                </div>
 			</div>
+
+        
 		<!-- </div> -->
 	</div>		
 	<div style="clear: both;"></div>
-
+        </form>
 	<div class="row">
         
 		<div class="col-md-6 col-center-block">

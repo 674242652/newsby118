@@ -15,7 +15,7 @@ namespace DatabaseSupport
         public DatabaseConnection()
         {
             con = new SqlConnection();
-            con.ConnectionString = "server=localhost;database=newsReleaseSystem;uid=sa;pwd=whmabc1995";
+            con.ConnectionString = "server=localhost;database=newsReleaseSystem;uid=sa;pwd=123456";
             con.Open();
         }
         public DataTable Select(string sql)

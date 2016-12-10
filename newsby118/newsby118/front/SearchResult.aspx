@@ -74,8 +74,8 @@
     <script>
         //分页
         (function (){
-            var number = <%=allnumber%> ;
-            var apage = <%=onepage%> ;
+            var number = <%=allnumber%>;
+            var apage = <%=onepage%>;
 
             var title = new Array();
             var summary = new Array();

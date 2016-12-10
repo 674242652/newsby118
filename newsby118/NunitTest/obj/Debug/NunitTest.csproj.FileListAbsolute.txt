@@ -6,3 +6,11 @@ E:\Asp.netC#\newsby118\NunitTest\bin\Debug\DatabaseSupport.dll
 E:\Asp.netC#\newsby118\NunitTest\bin\Debug\DatabaseSupport.pdb
 E:\Asp.netC#\newsby118\NunitTest\obj\Debug\NunitTest.exe
 E:\Asp.netC#\newsby118\NunitTest\obj\Debug\NunitTest.pdb
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\bin\Debug\NunitTest.exe.config
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\bin\Debug\NunitTest.exe
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\bin\Debug\NunitTest.pdb
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\bin\Debug\DatabaseSupport.dll
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\bin\Debug\DatabaseSupport.pdb
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\obj\Debug\NunitTest.csprojResolveAssemblyReference.cache
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\obj\Debug\NunitTest.exe
+E:\2016秋季学期\ASP.Net\newsby118\NunitTest\obj\Debug\NunitTest.pdb
