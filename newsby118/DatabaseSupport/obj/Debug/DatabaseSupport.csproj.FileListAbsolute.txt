@@ -1,0 +1,5 @@
+E:\Asp.netC#\newsby118\DatabaseSupport\bin\Debug\DatabaseSupport.dll
+E:\Asp.netC#\newsby118\DatabaseSupport\bin\Debug\DatabaseSupport.pdb
+E:\Asp.netC#\newsby118\DatabaseSupport\obj\Debug\DatabaseSupport.csprojResolveAssemblyReference.cache
+E:\Asp.netC#\newsby118\DatabaseSupport\obj\Debug\DatabaseSupport.dll
+E:\Asp.netC#\newsby118\DatabaseSupport\obj\Debug\DatabaseSupport.pdb
