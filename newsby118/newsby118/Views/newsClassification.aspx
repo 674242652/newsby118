@@ -41,7 +41,7 @@
                         <asp:BoundField DataField="id" HeaderText="编号" />
                         <asp:TemplateField HeaderText="类别名">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" ID="ClassLink" OnClick="ClassLink_Click"></asp:LinkButton>
+                                <asp:LinkButton runat="server" ID="ClassLink" OnClick="ClassLink_Click" Text="mmm"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField DataField="editTime" HeaderText="最新发布时间" />

@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/AdminLTE.min.css">
     <link rel="stylesheet" href="css/mycss/global.css" />
+
     <style>
+        /*{border:1px solid !important;}*/
         body{
 	    	background-color: #eef2f6;
 	    }  
@@ -21,9 +23,12 @@
 		}
 		.myNav{
 			height:100%;
-
+            padding-right:0px;
+            /*padding:0px 0px 0px 0px;*/
 		}
 		.myNav ul{
+            margin:0px 0px 0px 0px;
+            padding:0px 0px 0px 0px;
             list-style: none;
             display:inline-block;
 		}
@@ -58,7 +63,7 @@
 					<li><a>国内</a></li>
 				</ul>
                 <div style="float:right;display:inline-block;line-height:28px;">
-                    <asp:LinkButton ID="btn_login" runat="server">登陆</asp:LinkButton>
+                    <asp:LinkButton ID="btn_login" runat="server">登录</asp:LinkButton>
                 </div>
 			</div>
 

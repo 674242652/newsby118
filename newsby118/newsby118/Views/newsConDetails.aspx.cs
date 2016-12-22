@@ -36,7 +36,7 @@ namespace newsby118.front
             String id = (articleList.Rows[row].Cells[0]).Text.ToString().Trim();
             //Response.Write("<script>alert('" + s + "')</script>");
            
-            articlesPreseter.DelectArticleById(id);
+            ArticlesPreseter.DelectArticleById(id);
             GridViewBind();
         }
         protected void Edit_Click(object sender, EventArgs e)
@@ -50,12 +50,12 @@ namespace newsby118.front
 
         private void GridViewBind()
         {
-            articleList.DataSource = articlesPreseter.GetArticleByClassification(_classId);
+            articleList.DataSource = ArticlesPreseter.GetArticleByClassification(_classId);
             articleList.DataBind();
         }
         private void setPageTitle()
         {
-            DataTable dt = classificationPreseter.GetClassificatiionById(_classId);
+            DataTable dt = ClassificationPreseter.GetClassificatiionById(_classId);
             HTMLpageTitle.InnerHtml = dt.Rows[0]["name"].ToString();
         }
     }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace DatabaseSupport
 {
@@ -15,7 +16,8 @@ namespace DatabaseSupport
         public DatabaseConnection()
         {
             con = new SqlConnection();
-            con.ConnectionString = "server=localhost;database=newsReleaseSystem;uid=sa;pwd=123456";
+            //con.ConnectionString = "server=localhost;database=newsReleaseSystem;uid=sa;pwd=123456";
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
             con.Open();
         }
         public DataTable Select(string sql)

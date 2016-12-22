@@ -57,207 +57,209 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="front\FileNotFond.html" />
-    <Content Include="front\css\AdminLTE.min.css" />
-    <Content Include="front\css\blue.css" />
-    <Content Include="front\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
-    <Content Include="front\css\bootstrap.min.css" />
-    <Content Include="front\css\font-awesome\css\font-awesome.css" />
-    <Content Include="front\css\font-awesome\css\font-awesome.min.css" />
-    <Content Include="front\css\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="front\css\font-awesome\HELP-US-OUT.txt" />
-    <Content Include="front\css\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="front\css\green.css" />
-    <Content Include="front\css\mycss\global.css" />
-    <Content Include="front\css\mycss\reset.css" />
-    <Content Include="front\css\skins\_all-skins.min.css" />
-    <Content Include="front\dist\css\AdminLTE.css" />
-    <Content Include="front\dist\css\AdminLTE.min.css" />
-    <Content Include="front\dist\css\skins\skin-black-light.css" />
-    <Content Include="front\dist\css\skins\skin-black-light.min.css" />
-    <Content Include="front\dist\css\skins\skin-black.css" />
-    <Content Include="front\dist\css\skins\skin-black.min.css" />
-    <Content Include="front\dist\css\skins\skin-blue-light.css" />
-    <Content Include="front\dist\css\skins\skin-blue-light.min.css" />
-    <Content Include="front\dist\css\skins\skin-blue.css" />
-    <Content Include="front\dist\css\skins\skin-blue.min.css" />
-    <Content Include="front\dist\css\skins\skin-green-light.css" />
-    <Content Include="front\dist\css\skins\skin-green-light.min.css" />
-    <Content Include="front\dist\css\skins\skin-green.css" />
-    <Content Include="front\dist\css\skins\skin-green.min.css" />
-    <Content Include="front\dist\css\skins\skin-purple-light.css" />
-    <Content Include="front\dist\css\skins\skin-purple-light.min.css" />
-    <Content Include="front\dist\css\skins\skin-purple.css" />
-    <Content Include="front\dist\css\skins\skin-purple.min.css" />
-    <Content Include="front\dist\css\skins\skin-red-light.css" />
-    <Content Include="front\dist\css\skins\skin-red-light.min.css" />
-    <Content Include="front\dist\css\skins\skin-red.css" />
-    <Content Include="front\dist\css\skins\skin-red.min.css" />
-    <Content Include="front\dist\css\skins\skin-yellow-light.css" />
-    <Content Include="front\dist\css\skins\skin-yellow-light.min.css" />
-    <Content Include="front\dist\css\skins\skin-yellow.css" />
-    <Content Include="front\dist\css\skins\skin-yellow.min.css" />
-    <Content Include="front\dist\css\skins\_all-skins.css" />
-    <Content Include="front\dist\css\skins\_all-skins.min.css" />
-    <Content Include="front\dist\img\avatar.png" />
-    <Content Include="front\dist\img\avatar04.png" />
-    <Content Include="front\dist\img\avatar2.png" />
-    <Content Include="front\dist\img\avatar3.png" />
-    <Content Include="front\dist\img\avatar5.png" />
-    <Content Include="front\dist\img\boxed-bg.jpg" />
-    <Content Include="front\dist\img\boxed-bg.png" />
-    <Content Include="front\dist\img\credit\american-express.png" />
-    <Content Include="front\dist\img\credit\cirrus.png" />
-    <Content Include="front\dist\img\credit\mastercard.png" />
-    <Content Include="front\dist\img\credit\mestro.png" />
-    <Content Include="front\dist\img\credit\paypal.png" />
-    <Content Include="front\dist\img\credit\paypal2.png" />
-    <Content Include="front\dist\img\credit\visa.png" />
-    <Content Include="front\dist\img\default-50x50.gif" />
-    <Content Include="front\dist\img\icons.png" />
-    <Content Include="front\dist\img\photo1.png" />
-    <Content Include="front\dist\img\photo2.png" />
-    <Content Include="front\dist\img\photo3.jpg" />
-    <Content Include="front\dist\img\photo4.jpg" />
-    <Content Include="front\dist\img\user1-128x128.jpg" />
-    <Content Include="front\dist\img\user2-160x160.jpg" />
-    <Content Include="front\dist\img\user3-128x128.jpg" />
-    <Content Include="front\dist\img\user4-128x128.jpg" />
-    <Content Include="front\dist\img\user5-128x128.jpg" />
-    <Content Include="front\dist\img\user6-128x128.jpg" />
-    <Content Include="front\dist\img\user7-128x128.jpg" />
-    <Content Include="front\dist\img\user8-128x128.jpg" />
-    <Content Include="front\dist\js\app.js" />
-    <Content Include="front\dist\js\app.min.js" />
-    <Content Include="front\dist\js\demo.js" />
-    <Content Include="front\dist\js\pages\dashboard.js" />
-    <Content Include="front\dist\js\pages\dashboard2.js" />
-    <Content Include="front\editnews.aspx" />
-    <Content Include="front\img\blue%402x.png" />
-    <Content Include="front\img\blue.png" />
-    <Content Include="front\img\file\dir.png" />
-    <Content Include="front\img\file\file.png" />
-    <Content Include="front\img\green%402x.png" />
-    <Content Include="front\img\green.png" />
-    <Content Include="front\img\logo_light.png" />
-    <Content Include="front\index.aspx" />
-    <Content Include="front\js\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
-    <Content Include="front\js\bootstrap.min.js" />
-    <Content Include="front\js\icheck.min.js" />
-    <Content Include="front\js\jquery-2.2.3.min.js" />
-    <Content Include="front\login.aspx" />
-    <Content Include="front\newsConDetails.aspx" />
-    <Content Include="front\newsClassification.aspx" />
-    <Content Include="front\newsDetail.aspx" />
-    <Content Include="front\SearchResult.aspx" />
-    <Content Include="front\showContenModel.html" />
-    <Content Include="front\NoAccess.html" />
+    <Content Include="Views\FileNotFond.html" />
+    <Content Include="Views\css\AdminLTE.min.css" />
+    <Content Include="Views\css\blue.css" />
+    <Content Include="Views\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Views\css\bootstrap.min.css" />
+    <Content Include="Views\css\font-awesome\css\font-awesome.css" />
+    <Content Include="Views\css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Views\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Views\css\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Views\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Views\css\green.css" />
+    <Content Include="Views\css\mycss\global.css" />
+    <Content Include="Views\css\mycss\reset.css" />
+    <Content Include="Views\css\skins\_all-skins.min.css" />
+    <Content Include="Views\dist\css\AdminLTE.css" />
+    <Content Include="Views\dist\css\AdminLTE.min.css" />
+    <Content Include="Views\dist\css\skins\skin-black-light.css" />
+    <Content Include="Views\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Views\dist\css\skins\skin-black.css" />
+    <Content Include="Views\dist\css\skins\skin-black.min.css" />
+    <Content Include="Views\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Views\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Views\dist\css\skins\skin-blue.css" />
+    <Content Include="Views\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Views\dist\css\skins\skin-green-light.css" />
+    <Content Include="Views\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Views\dist\css\skins\skin-green.css" />
+    <Content Include="Views\dist\css\skins\skin-green.min.css" />
+    <Content Include="Views\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Views\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Views\dist\css\skins\skin-purple.css" />
+    <Content Include="Views\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Views\dist\css\skins\skin-red-light.css" />
+    <Content Include="Views\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Views\dist\css\skins\skin-red.css" />
+    <Content Include="Views\dist\css\skins\skin-red.min.css" />
+    <Content Include="Views\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Views\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Views\dist\css\skins\skin-yellow.css" />
+    <Content Include="Views\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Views\dist\css\skins\_all-skins.css" />
+    <Content Include="Views\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Views\dist\img\avatar.png" />
+    <Content Include="Views\dist\img\avatar04.png" />
+    <Content Include="Views\dist\img\avatar2.png" />
+    <Content Include="Views\dist\img\avatar3.png" />
+    <Content Include="Views\dist\img\avatar5.png" />
+    <Content Include="Views\dist\img\boxed-bg.jpg" />
+    <Content Include="Views\dist\img\boxed-bg.png" />
+    <Content Include="Views\dist\img\credit\american-express.png" />
+    <Content Include="Views\dist\img\credit\cirrus.png" />
+    <Content Include="Views\dist\img\credit\mastercard.png" />
+    <Content Include="Views\dist\img\credit\mestro.png" />
+    <Content Include="Views\dist\img\credit\paypal.png" />
+    <Content Include="Views\dist\img\credit\paypal2.png" />
+    <Content Include="Views\dist\img\credit\visa.png" />
+    <Content Include="Views\dist\img\default-50x50.gif" />
+    <Content Include="Views\dist\img\icons.png" />
+    <Content Include="Views\dist\img\photo1.png" />
+    <Content Include="Views\dist\img\photo2.png" />
+    <Content Include="Views\dist\img\photo3.jpg" />
+    <Content Include="Views\dist\img\photo4.jpg" />
+    <Content Include="Views\dist\img\user1-128x128.jpg" />
+    <Content Include="Views\dist\img\user2-160x160.jpg" />
+    <Content Include="Views\dist\img\user3-128x128.jpg" />
+    <Content Include="Views\dist\img\user4-128x128.jpg" />
+    <Content Include="Views\dist\img\user5-128x128.jpg" />
+    <Content Include="Views\dist\img\user6-128x128.jpg" />
+    <Content Include="Views\dist\img\user7-128x128.jpg" />
+    <Content Include="Views\dist\img\user8-128x128.jpg" />
+    <Content Include="Views\dist\js\app.js" />
+    <Content Include="Views\dist\js\app.min.js" />
+    <Content Include="Views\dist\js\demo.js" />
+    <Content Include="Views\dist\js\pages\dashboard.js" />
+    <Content Include="Views\dist\js\pages\dashboard2.js" />
+    <Content Include="Views\editnews.aspx" />
+    <Content Include="Views\img\blue%402x.png" />
+    <Content Include="Views\img\blue.png" />
+    <Content Include="Views\img\file\dir.png" />
+    <Content Include="Views\img\file\file.png" />
+    <Content Include="Views\img\green%402x.png" />
+    <Content Include="Views\img\green.png" />
+    <Content Include="Views\img\logo_light.png" />
+    <Content Include="Views\index.aspx" />
+    <Content Include="Views\js\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Views\js\bootstrap.min.js" />
+    <Content Include="Views\js\icheck.min.js" />
+    <Content Include="Views\js\jquery-2.2.3.min.js" />
+    <Content Include="Views\login.aspx" />
+    <Content Include="Views\newsConDetails.aspx" />
+    <Content Include="Views\newsClassification.aspx" />
+    <Content Include="Views\newsDetail.aspx" />
+    <Content Include="Views\SearchResult.aspx" />
+    <Content Include="Views\showContenModel.html" />
+    <Content Include="Views\NoAccess.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="front\editnews.aspx.cs">
+    <Compile Include="Controllers\ArticlesPreseter.cs" />
+    <Compile Include="Controllers\ClassificationPreseter.cs" />
+    <Compile Include="Controllers\DatabaseConnection.cs" />
+    <Compile Include="Controllers\DatabasePreseter.cs" />
+    <Compile Include="Controllers\Entity\Article.cs" />
+    <Compile Include="Controllers\LoginPreseter.cs" />
+    <Compile Include="Controllers\SearchPreseter.cs" />
+    <Compile Include="Controllers\UserPreseter.cs" />
+    <Compile Include="Views\editnews.aspx.cs">
       <DependentUpon>editnews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\editnews.aspx.designer.cs">
+    <Compile Include="Views\editnews.aspx.designer.cs">
       <DependentUpon>editnews.aspx</DependentUpon>
     </Compile>
-    <Compile Include="front\index.aspx.cs">
+    <Compile Include="Views\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\index.aspx.designer.cs">
+    <Compile Include="Views\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="front\login.aspx.cs">
+    <Compile Include="Views\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\login.aspx.designer.cs">
+    <Compile Include="Views\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="front\newsConDetails.aspx.cs">
+    <Compile Include="Views\newsConDetails.aspx.cs">
       <DependentUpon>newsConDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\newsConDetails.aspx.designer.cs">
+    <Compile Include="Views\newsConDetails.aspx.designer.cs">
       <DependentUpon>newsConDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="front\newsClassification.aspx.cs">
+    <Compile Include="Views\newsClassification.aspx.cs">
       <DependentUpon>newsClassification.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\newsClassification.aspx.designer.cs">
+    <Compile Include="Views\newsClassification.aspx.designer.cs">
       <DependentUpon>newsClassification.aspx</DependentUpon>
     </Compile>
-    <Compile Include="front\newsDetail.aspx.cs">
+    <Compile Include="Views\newsDetail.aspx.cs">
       <DependentUpon>newsDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\newsDetail.aspx.designer.cs">
+    <Compile Include="Views\newsDetail.aspx.designer.cs">
       <DependentUpon>newsDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="front\SearchResult.aspx.cs">
+    <Compile Include="Views\SearchResult.aspx.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="front\SearchResult.aspx.designer.cs">
+    <Compile Include="Views\SearchResult.aspx.designer.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="front\css\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="front\css\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="front\css\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="front\css\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="front\css\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="front\css\font-awesome\less\animated.less" />
-    <Content Include="front\css\font-awesome\less\bordered-pulled.less" />
-    <Content Include="front\css\font-awesome\less\core.less" />
-    <Content Include="front\css\font-awesome\less\fixed-width.less" />
-    <Content Include="front\css\font-awesome\less\font-awesome.less" />
-    <Content Include="front\css\font-awesome\less\icons.less" />
-    <Content Include="front\css\font-awesome\less\larger.less" />
-    <Content Include="front\css\font-awesome\less\list.less" />
-    <Content Include="front\css\font-awesome\less\mixins.less" />
-    <Content Include="front\css\font-awesome\less\path.less" />
-    <Content Include="front\css\font-awesome\less\rotated-flipped.less" />
-    <Content Include="front\css\font-awesome\less\screen-reader.less" />
-    <Content Include="front\css\font-awesome\less\stacked.less" />
-    <Content Include="front\css\font-awesome\less\variables.less" />
-    <Content Include="front\css\font-awesome\scss\font-awesome.scss" />
-    <Content Include="front\css\font-awesome\scss\_animated.scss" />
-    <Content Include="front\css\font-awesome\scss\_bordered-pulled.scss" />
-    <Content Include="front\css\font-awesome\scss\_core.scss" />
-    <Content Include="front\css\font-awesome\scss\_fixed-width.scss" />
-    <Content Include="front\css\font-awesome\scss\_icons.scss" />
-    <Content Include="front\css\font-awesome\scss\_larger.scss" />
-    <Content Include="front\css\font-awesome\scss\_list.scss" />
-    <Content Include="front\css\font-awesome\scss\_mixins.scss" />
-    <Content Include="front\css\font-awesome\scss\_path.scss" />
-    <Content Include="front\css\font-awesome\scss\_rotated-flipped.scss" />
-    <Content Include="front\css\font-awesome\scss\_screen-reader.scss" />
-    <Content Include="front\css\font-awesome\scss\_stacked.scss" />
-    <Content Include="front\css\font-awesome\scss\_variables.scss" />
-    <Content Include="front\css\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="front\css\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="front\css\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="front\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Views\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Views\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Views\css\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Views\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Views\css\font-awesome\less\animated.less" />
+    <Content Include="Views\css\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Views\css\font-awesome\less\core.less" />
+    <Content Include="Views\css\font-awesome\less\fixed-width.less" />
+    <Content Include="Views\css\font-awesome\less\font-awesome.less" />
+    <Content Include="Views\css\font-awesome\less\icons.less" />
+    <Content Include="Views\css\font-awesome\less\larger.less" />
+    <Content Include="Views\css\font-awesome\less\list.less" />
+    <Content Include="Views\css\font-awesome\less\mixins.less" />
+    <Content Include="Views\css\font-awesome\less\path.less" />
+    <Content Include="Views\css\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Views\css\font-awesome\less\screen-reader.less" />
+    <Content Include="Views\css\font-awesome\less\stacked.less" />
+    <Content Include="Views\css\font-awesome\less\variables.less" />
+    <Content Include="Views\css\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Views\css\font-awesome\scss\_animated.scss" />
+    <Content Include="Views\css\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Views\css\font-awesome\scss\_core.scss" />
+    <Content Include="Views\css\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Views\css\font-awesome\scss\_icons.scss" />
+    <Content Include="Views\css\font-awesome\scss\_larger.scss" />
+    <Content Include="Views\css\font-awesome\scss\_list.scss" />
+    <Content Include="Views\css\font-awesome\scss\_mixins.scss" />
+    <Content Include="Views\css\font-awesome\scss\_path.scss" />
+    <Content Include="Views\css\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Views\css\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Views\css\font-awesome\scss\_stacked.scss" />
+    <Content Include="Views\css\font-awesome\scss\_variables.scss" />
+    <Content Include="Views\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Views\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\css\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DatabaseSupport\DatabaseSupport.csproj">
-      <Project>{edcc0efb-7826-4803-8bb9-a62c33c39192}</Project>
-      <Name>DatabaseSupport</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

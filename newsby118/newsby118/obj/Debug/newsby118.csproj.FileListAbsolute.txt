@@ -30,3 +30,9 @@ E:\2016秋季学期\ASP.Net\newsby118\newsby118\bin\DatabaseSupport.pdb
 E:\2016秋季学期\ASP.Net\newsby118\newsby118\obj\Debug\newsby118.csprojResolveAssemblyReference.cache
 E:\2016秋季学期\ASP.Net\newsby118\newsby118\obj\Debug\newsby118.dll
 E:\2016秋季学期\ASP.Net\newsby118\newsby118\obj\Debug\newsby118.pdb
+C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\obj\Debug\newsby118.csprojResolveAssemblyReference.cache
+C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\bin\newsby118.dll.config
+C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\bin\newsby118.dll
+C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\bin\newsby118.pdb
+C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\obj\Debug\newsby118.dll
+C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\obj\Debug\newsby118.pdb

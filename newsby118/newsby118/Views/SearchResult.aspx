@@ -19,7 +19,7 @@
             <br />
 
             <asp:TextBox ID="txt_search" runat="server"></asp:TextBox>
-            <asp:Button ID="btn_Search" runat="server" Text="查询" />
+            <asp:Button ID="btn_Search" runat="server" Text="查询" OnClick="btn_Search_Click" />
             
         </div>
         
@@ -89,7 +89,15 @@
             articleId.push("<%=articleId[k]%>")
             <%}%>  
 
-            alert(title[1]+"");
+            var listValue = "";
+
+            for(var i=0;i<number;i++){
+                var url = "http://118news/news/"+articleId[i]+".shtml"
+                var hhref = "newsDetail.aspx?articleId="+articleId[i];
+                listValue+="<div><h3 class=\"news_title\"><a href=\""+hhref+"\">"+title[i]+"</a></h3><p class=\"news_summary\">"+summary[i]+"...</p><p class=\"news_summary\"><a href=\"+hhref+\">"+url+"</a> <span> 2016/02/22 10:22:22</span></p></div>";
+            }
+            // /alert(title[1]+"");
+            $('#searchList').html(listValue);
         })();
 
 

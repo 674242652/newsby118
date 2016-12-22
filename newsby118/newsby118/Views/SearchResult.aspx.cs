@@ -24,7 +24,8 @@ namespace WebApplication4.front
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String ss = Request.QueryString["page"];
+            //String ss = Request.QueryString["page"];
+            keyword = Request.QueryString["keyword"];
             SetArticleMsg();
 
 
@@ -45,6 +46,12 @@ namespace WebApplication4.front
             summary = (string[])summary_list.ToArray(typeof(string)); ;
             articleId = (string[])id_list.ToArray(typeof(string));
             allnumber = title.Length;
+        }
+
+        protected void btn_Search_Click(object sender, EventArgs e)
+        {
+            String key = txt_search.Text.ToString();
+            Response.Redirect("SearchResult.aspx?keyword=" + key);
         }
 
     }

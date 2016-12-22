@@ -13,14 +13,17 @@ namespace DatabaseSupport.Entity
         private String summary;
         private String content;
         private String buildtime;
-        private String classification;
         private String[] filesURL;
+        private String classification;
+        
         int praiseNumber;
         int pageviews;
+
+        private String editor;//作者需要用article-user中查出来，由于用的不频繁所以构建的时候不准备每个都构建，需要用的时候查询一下
         public Article(DataTable dt, int rowid){
             setSelf(dt, rowid);
         }
-        public Article() { ;}
+        public Article() {;}
         public void setSelf(DataTable dt,int rowid)
         {
             DataRowCollection r = dt.Rows;
@@ -35,7 +38,34 @@ namespace DatabaseSupport.Entity
             praiseNumber = int.Parse(r[rowid]["praiseNumber"].ToString());
             filesURL = furl.Split('&');//用&分割多个文件
         }
+        public String[] FieldsToString()
+        {
+            String [] fields = new String[9];
 
+            fields[0] = id;
+            fields[1] =title;
+            fields[2] =summary;
+            fields[3] =content;
+            fields[4] =buildtime;
+
+            StringBuilder fiurl = new StringBuilder();
+            int len = filesURL.Length;
+            for (int i = 0; i < len; i++)
+            {
+                fiurl.Append(filesURL[i]);
+                if (i != len - 1)
+                {
+                    fiurl.Append('&');
+                }
+            }
+            fields[5] = fiurl.ToString();
+            fields[6] = classification;
+        
+            fields[7] =praiseNumber.ToString();
+            fields[8] =pageviews.ToString();
+
+            return fields;
+        }
 
         public static bool operator ==(Article a, Article b)
         {

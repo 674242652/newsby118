@@ -57,13 +57,14 @@
 				<div class="box box-primary" style="margin-bottom: 0px;">
 					
 		            <div class="box-header with-border ">
-		              	<h3 id = "title" style="font-weight:bold;">习近平会见候任联合国秘书长古特雷斯</h3>
+                        <asp:Label ID="lab_title" runat="server" Font-Bold="true" Font-Size="XX-Large" Text="新闻标题" ></asp:Label>
+                        <br />
 		              	<!-- <h3 class="box-title">习近平会见候任联合国秘书长古特雷斯</h3> -->
-		              	<h6 id = "time" >2016年11月28日 20:06　来源：新华网 </h6>
+		              	<asp:Label ID="lab_time" runat="server" Text="2016/12/10 21:21"></asp:Label>
 		            </div>
 		            <!-- /.box-header -->
 		            <!-- form start -->
-		              <div id="content" class="box-body">
+		              <div id="content" class="box-body" runat="server">
 
 							<p>新华社北京11月28日电(记者李忠发)国家主席习近平28日在钓鱼台国宾馆会见候任联合国秘书长古特雷斯。</p>
 　　<p>习近平祝贺古特雷斯出任下届联合国秘书长，强调中国将坚定支持古特雷斯履行好秘书长工作职责。习近平指出，作为最具普遍性、权威性、代表性的政府间国际组织，联合国在应对全球性挑战中作用不可代替。第二次世界大战结束70多年来，世界实现了总体和平、持续发展的态势，联合国对此功不可没。随着国际形势的发展变化，各国对联合国的期待上升，赞成联合国发挥更大作用。联合国应当旗帜鲜明地维护《联合国宪章》宗旨和原则，积极有为维护国际和平与安全，持之以恒推进共同发展，特别是要落实好2030年可持续发展议程和气候变化《巴黎协定》，照顾发展中国家利益，多为发展中国家发声、办事。</p>
@@ -75,7 +76,7 @@
 		              <!-- /.box-body -->
 
 		              <div class="box-footer">
-		              	<div id="author" style="float:right;">编辑：xhh</div>
+		              	<div id="author" style="float:right;" runat="server">编辑：xhh</div>
 		              </div>
 		    	</div>
 				<!-- 分享 -->
@@ -101,16 +102,6 @@
 			                我觉得这篇文章好。
 			            </div>
             		</div>
-            		<div class="direct-chat-msg">
-			            <div class="direct-chat-info clearfix">
-			                <span class="direct-chat-name pull-left">游客</span>
-			                <span class="direct-chat-timestamp pull-right">2016年11月28日 22:20</span>
-			            </div>
-			              <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-			            <div class="direct-chat-text">
-			                但是我觉得这文章很不好
-			            </div>
-            		</div>
 		    	</div> 
 
 				<!-- 发表评论，可以直接插入html中 -->
@@ -119,7 +110,7 @@
 	                  <label>评论</label>
                        
                       <asp:TextBox ID="txb_comment" runat="server" class="form-control" rows="3" placeholder="请输入 ..." TextMode="MultiLine"></asp:TextBox>
-                      <asp:Button ID="btn_sure" runat="server" Text="确认" style="float: right;margin:10px 0 10px 0; "/>
+                      <asp:Button ID="btn_sure" runat="server" Text="确认" style="float: right;margin:10px 0 10px 0; " OnClick="btn_sure_Click"/>
 	                </div>
 	                <div style="clear: both;"></div>
 		    	</div>

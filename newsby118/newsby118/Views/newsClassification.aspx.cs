@@ -13,16 +13,17 @@ namespace newsby118.front
         
         private void GridViewBind()
         {
-            DataTable dt = classificationPreseter.GetAllClassificatiion();
+            DataTable dt = ClassificationPreseter.GetAllClassificatiion();
             gdv_classif.DataSource = dt;
             gdv_classif.DataBind();
-
+            
             for (int i = 0; i < gdv_classif.Rows.Count; i++)
             {
 
                 LinkButton lb = (LinkButton)gdv_classif.Rows[i].FindControl("ClassLink");
                 lb.Text = dt.Rows[i]["name"].ToString();
             }
+            
         }
 
 

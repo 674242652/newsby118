@@ -8,35 +8,23 @@ using System.Data;
 using DatabaseSupport.Entity;
 namespace DatabaseSupport
 {
-    public class articlesPreseter
+    public class ArticlesPreseter
     {
-        public static bool InsertArticles(String [] articleMessage)
+        public static bool InsertArticles(Article article)
         {
-            int len = articleMessage.Length;
-            if (len == 4){
 
                 //  0     1        2            3           4              5                 6           7
                 // id   title   summary     [content]   buildtime    classification     pageviews   prasieNumber
                 //      0标题                 1内容      2发布时间       3分类         
-                String id = articleMessage[2];
-                String summary = getSummary(articleMessage[2]);
 
-                String [] msg = new String[9];
-                int index = 0;
-                msg[index++] = id;
-                for(int i=0;i<len;i++){
-                    if(i==1){msg[index++] =summary;}
-                    msg[index++] = msg[i];
-                }
-                msg[index++] = "0";msg[index++]="0";//浏览数和点赞数
-                String sql = sql = string.Format("insert into article VALUES({0},{1},{2},{3},{4},{5},{6},{7})",msg[0],msg[1],msg[2],msg[3],msg[4],msg[5],msg[6],msg[7]);
+
+                String[] msg = article.FieldsToString();
+
+
+                String sql = sql = string.Format("insert into article VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8})", msg[0], msg[1], msg[2], msg[3], msg[4], msg[5], msg[6], msg[7], msg[8]);
                 DatabasePreseter.DBPreseter.SqlOperation(sql);
 
                 return true;
-            }
-            else{
-                return false;
-            }
 
         }
         /**
@@ -87,13 +75,6 @@ namespace DatabaseSupport
             return true;
         }
 
-        private static String getSummary(String content)
-        {
-            String res = content;
-            res = res.Replace("<p>", "");
-            res = res.Replace("</p>", "");
-            res = res.Substring(0,Math.Min(25,res.Length));
-            return res;
-        }
+        
     }
 }

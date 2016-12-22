@@ -12,17 +12,20 @@ namespace WebApplication4.front
     public partial class editnews : System.Web.UI.Page
     {
         String _articleId = null;
-
+        DataTable classData = null;
 
         private void bindDropListData()
         {
-            DataTable dt = classificationPreseter.GetAllClassificatiion();
+            DataTable dt = ClassificationPreseter.GetAllClassificatiion();
             ddl_articleType.Items.Clear();
             ddl_articleType.DataSource = dt;
             ddl_articleType.DataTextField = "name";
             //ddl_articleType.DataValueField = "name";
             ddl_articleType.DataBind();
             //ddl_articleType.Items.Insert(0, new ListItem("", ""));//插入空项，此举必须放到数据绑定之后
+
+
+            classData = ClassificationPreseter.GetAllClassificatiion();
         }
         private void InsertArticle()
         {
@@ -32,18 +35,18 @@ namespace WebApplication4.front
             DateTime date = DateTime.Now; //时间
             String classification = ddl_articleType.SelectedValue; //类别
 
-            //  0     1        2            3           4              5                 6           7
-            // id   title   summary     [content]   buildtime    classification     pageviews   prasieNumber
-            //      0标题                 1内容      2发布时间       3分类           
-
-            String[] msg = new String[4];
-            msg[0] = title;
-            msg[1] = content;
-            msg[2] = date.ToString();
-            msg[3] = classification;
-
-
-            articlesPreseter.InsertArticles(msg);
+            
+            Article article = new Article();
+            article.Id = date.ToShortTimeString();          //ID
+            article.Title = title;                          //title
+            article.Summary = getSummary(content);          //summary
+            article.Content = content;                      //content
+            article.Buildtime = date.ToShortTimeString();   //buildtime
+            article.FilesURL = new String[2];               //文件信息                                                 
+            article.Classification = classification;        //分类
+            article.Pageviews = 0;                          //流浪量
+            article.PraiseNumber = 0;                       //点赞
+            ArticlesPreseter.InsertArticles(article);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,7 +63,7 @@ namespace WebApplication4.front
                 _articleId = articleId;
                 
 
-                Article thisArt = articlesPreseter.GetArticleById(_articleId);
+                Article thisArt = ArticlesPreseter.GetArticleById(_articleId);
                 //Response.Write("<script>alert('" + thisArt.Title + "')</script>");
 
 
@@ -77,7 +80,29 @@ namespace WebApplication4.front
             //Response.Write("<script>alert('" + thisArt.Title + "')</script>");
             //InsertArticle();
             //String classification = ddl_articleType.SelectedValue; //类别
-            //Response.Write("<script>alert('"+classification+"')</script>");
+            Response.Write("<script>alert('"+getArticleType()+"')</script>");
+        }
+        private String getArticleType()
+        {
+            String classification = ddl_articleType.SelectedValue; //类别
+            int count = classData.Rows.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if(classification == classData.Rows[i]["name"].ToString()){
+
+                    classification = classData.Rows[i]["id"].ToString();
+                    break;
+                }
+            }
+            return classification;
+        } 
+        private String getSummary(String content)
+        {
+            String res = content;
+            res = res.Replace("<p>", "");
+            res = res.Replace("</p>", "");
+            res = res.Substring(0, Math.Min(25, res.Length));
+            return res;
         }
     }
 }

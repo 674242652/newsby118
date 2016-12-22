@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+
 namespace DatabaseSupport
 {
-    public class classificationPreseter
+    public class ClassificationPreseter
     {
         public static DataTable GetAllClassificatiion()
         {
