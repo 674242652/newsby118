@@ -5,12 +5,28 @@
 <head runat="server">
 <title></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" href="css/AdminLTE.min.css">
-  	<link rel="stylesheet" href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+  	<link rel="stylesheet" href="css/AdminLTE.min.css"/>
+  	<link rel="stylesheet" href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"/>
     <link rel="stylesheet" href="css/mycss/global.css" />
-  <!-- <style type="text/css" media="screen">*{border:1px solid;}  </style> -->
-  </style>
+    <script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <script>
+        $(function () {
+            //Add text editor
+            $("#compose_textarea").wysihtml5();
+        });
+
+        var fileUpload = $('#FileUpload');
+        fileUpload.on('change', function (e) {
+            //e.currentTarget.files 是一个数组，如果支持多个文件，则需要遍历
+            var file = e.currentTarget.files[0];
+            var lab_file = $('#lab_file');
+            lab_file.html(file.name);
+            //console.log(file.name);
+        });
+    </script>
 </head>
 <body>
       <div class="row">
@@ -65,32 +81,6 @@
       </div>
 
 
-    <script src="js/jquery-2.2.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <script>
-        $(function () {
-            //Add text editor
-            $("#compose_textarea").wysihtml5();
-        });
-
-        var fileUpload = $('#FileUpload');
-        fileUpload.on('change', function (e) {
-            //e.currentTarget.files 是一个数组，如果支持多个文件，则需要遍历
-            var file = e.currentTarget.files[0];
-            var lab_file = $('#lab_file');
-            lab_file.html(file.name);
-            //console.log(file.name);
-        });
-
-        /*
-        var btn_finish = $('#btn_finish');
-        btn_finish.on('click', function (e) {
-            var articleS = $('#compose_textarea').val();
-            $('#txtarea_article').val(articleS);
-           // alert($('#txtarea_article').val);
-        });
-        */
-    </script>
+    
 </body>
 </html>

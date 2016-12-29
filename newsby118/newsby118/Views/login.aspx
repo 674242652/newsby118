@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
  <title>新闻发布系统登入</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
   <style type="text/css" media="screen">
     body {
       padding-top: 40px;

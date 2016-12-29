@@ -97,7 +97,7 @@
 			                <span class="direct-chat-name pull-left">游客</span>
 			                <span class="direct-chat-timestamp pull-right">2016年11月28日 22:20</span>
 			            </div>
-			              <img class="direct-chat-img" src="dist/img/user2-160x160.jpg" alt="message user image">
+			              <img class="direct-chat-img" src="dist/img/user2-160x160.jpg" alt="message user image"/>
 			            <div class="direct-chat-text">
 			                我觉得这篇文章好。
 			            </div>
@@ -110,7 +110,7 @@
 	                  <label>评论</label>
                        
                       <asp:TextBox ID="txb_comment" runat="server" class="form-control" rows="3" placeholder="请输入 ..." TextMode="MultiLine"></asp:TextBox>
-                      <asp:Button ID="btn_sure" runat="server" Text="确认" style="float: right;margin:10px 0 10px 0; " OnClick="btn_sure_Click"/>
+                      <asp:Button ID="btn_sure" runat="server" Text="确认" style="float: right;margin:10px 0 10px 0; height: 26px;" OnClick="btn_sure_Click"/>
 	                </div>
 	                <div style="clear: both;"></div>
 		    	</div>

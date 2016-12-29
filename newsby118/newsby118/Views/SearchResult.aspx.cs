@@ -6,8 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DatabaseSupport.Entity;
 using DatabaseSupport;
-using System.Collections;  
-  
+using System.Collections;
+using System.Data;
 namespace WebApplication4.front
 {
     public partial class SearchResult : System.Web.UI.Page
@@ -24,11 +24,22 @@ namespace WebApplication4.front
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            dropDownListBind();
             //String ss = Request.QueryString["page"];
             keyword = Request.QueryString["keyword"];
             SetArticleMsg();
 
 
+        }
+        private void dropDownListBind()
+        {
+            DataTable dt = ClassificationPreseter.GetAllClassificatiion();
+            ddl_newscategory.Items.Clear();
+            ddl_newscategory.DataSource = dt;
+            ddl_newscategory.DataTextField = "name";
+            //ddl_newscategory.DataValueField = "name";
+            ddl_newscategory.DataBind();
+            ddl_newscategory.Items.Insert(0, new ListItem("所有类别", ""));//插入空项，此举必须放到数据绑定之后
         }
         private void SetArticleMsg()
         {

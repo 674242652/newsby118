@@ -21,7 +21,7 @@ namespace DatabaseSupport
                 String[] msg = article.FieldsToString();
 
 
-                String sql = sql = string.Format("insert into article VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8})", msg[0], msg[1], msg[2], msg[3], msg[4], msg[5], msg[6], msg[7], msg[8]);
+                String sql = sql = string.Format("insert into article VALUES('{0}','{1}','{2}','{3}','{4}','{5}',{6},{7},{8})", msg[0], msg[1], msg[2], msg[3], msg[4], msg[5], msg[6], msg[7], msg[8]);
                 DatabasePreseter.DBPreseter.SqlOperation(sql);
 
                 return true;

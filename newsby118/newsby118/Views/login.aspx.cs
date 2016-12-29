@@ -24,7 +24,7 @@ namespace WebApplication4.front
             bool res = lp.Login(usr,pwd);
 
             if (res){
-                Response.Redirect("newsClassification.aspx");
+                Response.Redirect("NewsList.aspx");
             }
             else
             {

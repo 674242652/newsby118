@@ -12,8 +12,6 @@ namespace WebApplication4.front
     public partial class editnews : System.Web.UI.Page
     {
         String _articleId = null;
-        DataTable classData = null;
-
         private void bindDropListData()
         {
             DataTable dt = ClassificationPreseter.GetAllClassificatiion();
@@ -24,30 +22,8 @@ namespace WebApplication4.front
             ddl_articleType.DataBind();
             //ddl_articleType.Items.Insert(0, new ListItem("", ""));//插入空项，此举必须放到数据绑定之后
 
-
-            classData = ClassificationPreseter.GetAllClassificatiion();
         }
-        private void InsertArticle()
-        {
-            String title = txb_title.Text;//标题
-            String content = Server.HtmlEncode(Request.Form["articleContent"]); //内容
-            Response.Write(content);
-            DateTime date = DateTime.Now; //时间
-            String classification = ddl_articleType.SelectedValue; //类别
-
-            
-            Article article = new Article();
-            article.Id = date.ToShortTimeString();          //ID
-            article.Title = title;                          //title
-            article.Summary = getSummary(content);          //summary
-            article.Content = content;                      //content
-            article.Buildtime = date.ToShortTimeString();   //buildtime
-            article.FilesURL = new String[2];               //文件信息                                                 
-            article.Classification = classification;        //分类
-            article.Pageviews = 0;                          //流浪量
-            article.PraiseNumber = 0;                       //点赞
-            ArticlesPreseter.InsertArticles(article);
-        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -73,18 +49,40 @@ namespace WebApplication4.front
             
             
         }
+        private void InsertArticle()
+        {
+            String title = txb_title.Text;//标题
+            String content = compose_textarea.Value; //内容
+            //Response.Write(content);
+            DateTime date = DateTime.Now; //时间
+            
 
+            Article article = new Article();
+            article.Id = date.ToString("yyyyMMddhhmmssfff");               //ID
+            article.Title = title;                                      //title
+            article.Summary = getSummary(content);                      //summary
+            article.Content = content;                                  //content
+            article.Buildtime = date.ToString("yyyy-MM-dd hh:mm:ss.fff");   //buildtime
+            article.FilesURL = new String[2];                           //文件信息                                                 
+            article.Classification = getArticleType();                  //分类
+            article.Pageviews = 0;                                      //流浪量
+            article.PraiseNumber = 0;                                   //点赞
+           
+            ArticlesPreseter.InsertArticles(article);
+        }
         protected void btn_finish_Click(object sender, EventArgs e)
         {
 
             //Response.Write("<script>alert('" + thisArt.Title + "')</script>");
-            //InsertArticle();
+            InsertArticle();
             //String classification = ddl_articleType.SelectedValue; //类别
-            Response.Write("<script>alert('"+getArticleType()+"')</script>");
+            //内容
+           // Response.Write("<script>alert('" + content + "')</script>");
         }
         private String getArticleType()
         {
             String classification = ddl_articleType.SelectedValue; //类别
+            DataTable classData = ClassificationPreseter.GetAllClassificatiion();
             int count = classData.Rows.Count;
             for (int i = 0; i < count; i++)
             {
@@ -99,10 +97,20 @@ namespace WebApplication4.front
         private String getSummary(String content)
         {
             String res = content;
-            res = res.Replace("<p>", "");
-            res = res.Replace("</p>", "");
-            res = res.Substring(0, Math.Min(25, res.Length));
-            return res;
+
+            return ReplaceHtmlTag(res,25);
+        }
+        public  string ReplaceHtmlTag(string html, int length = 0)
+        {
+            string strText = System.Text.RegularExpressions.Regex.Replace(html, "<[^>]+>", "");
+            strText = System.Text.RegularExpressions.Regex.Replace(strText, "&[^;]+;", "");
+            strText = strText.Replace("\r", "").Replace("\n", "");
+            if (length > 0 && strText.Length > length)
+                return strText.Substring(0, length);
+
+
+            //Response.Write("<script>alert('" + strText + "')</script>");
+            return strText;
         }
     }
 }

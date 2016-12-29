@@ -23,7 +23,18 @@ namespace DatabaseSupport.Entity
         public Article(DataTable dt, int rowid){
             setSelf(dt, rowid);
         }
-        public Article() {;}
+        public Article() {
+            
+            id = String.Empty;
+            title = String.Empty;
+            summary = String.Empty;
+            content = String.Empty;
+            buildtime = String.Empty;
+            filesURL = new String[]{""};
+            classification = string.Empty;
+            PraiseNumber = 0;
+            Pageviews = 0;
+        }
         public void setSelf(DataTable dt,int rowid)
         {
             DataRowCollection r = dt.Rows;

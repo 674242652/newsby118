@@ -11,11 +11,14 @@ namespace newsby118.front
 {
     public partial class newsDetail : System.Web.UI.Page
     {
+        String _articleId = "1";
         protected void Page_Load(object sender, EventArgs e)
         {
             String articleId = Request.QueryString["articleId"];
-            articleId = (articleId == "" || articleId == null) ? "1000" : articleId;
-            Article article = ArticlesPreseter.GetArticleById(articleId);
+            _articleId = (articleId == "" || articleId == null) ? "1" : articleId;
+            Article article = ArticlesPreseter.GetArticleById(_articleId);
+
+
             lab_title.Text = article.Title;
             lab_time.Text = article.Buildtime;
             content.InnerHtml = article.Content;
@@ -26,6 +29,26 @@ namespace newsby118.front
         protected void btn_sure_Click(object sender, EventArgs e)
         {
 
+            DataTable dt = (DataTable)Session["User"];
+            try
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    Response.Write("<script>alert('" + dt.Rows[0]["username"] + "')</script>");
+                    DateTime now = DateTime.Now;
+                    String commentId = now.ToString("yyyymmddhhmmssfff");
+                    String commentContent = txb_comment.Text.ToString();
+                    String commentArticleId = _articleId;
+                    String commentTime = now.ToString("yyyy-mm-dd hh:mm:ss:fff");
+                }
+            }
+            catch (NullReferenceException ee)
+            {
+                //Response.Write("<script>alert('" + "请先登录" + "')</script>");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "",
+                    "if(confirm('您还未登录，前往登录?')){location.href='login.aspx'}else{location.href='newsDetail.aspx'}", true);
+            }
+           
             
         }
     }

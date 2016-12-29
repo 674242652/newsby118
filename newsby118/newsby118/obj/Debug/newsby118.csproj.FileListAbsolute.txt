@@ -4,8 +4,6 @@ E:\Asp.netC#\newsby118\newsby118\bin\newsby118.pdb
 E:\Asp.netC#\newsby118\newsby118\obj\Debug\newsby118.csprojResolveAssemblyReference.cache
 E:\Asp.netC#\newsby118\newsby118\obj\Debug\newsby118.dll
 E:\Asp.netC#\newsby118\newsby118\obj\Debug\newsby118.pdb
-E:\Asp.netC#\newsby118\newsby118\bin\DatabaseSupport.dll
-E:\Asp.netC#\newsby118\newsby118\bin\DatabaseSupport.pdb
 E:\newsby118\newsby118\bin\newsby118.dll.config
 E:\newsby118\newsby118\bin\newsby118.dll
 E:\newsby118\newsby118\bin\newsby118.pdb
@@ -36,3 +34,9 @@ C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\bin\new
 C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\bin\newsby118.pdb
 C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\obj\Debug\newsby118.dll
 C:\Users\Haomao\Documents\GitHub\MyFcatory\newsby118\newsby118\newsby118\obj\Debug\newsby118.pdb
+C:\BaiduYunDownload\newsby118\newsby118\bin\newsby118.dll.config
+C:\BaiduYunDownload\newsby118\newsby118\bin\newsby118.dll
+C:\BaiduYunDownload\newsby118\newsby118\bin\newsby118.pdb
+C:\BaiduYunDownload\newsby118\newsby118\obj\Debug\newsby118.csprojResolveAssemblyReference.cache
+C:\BaiduYunDownload\newsby118\newsby118\obj\Debug\newsby118.dll
+C:\BaiduYunDownload\newsby118\newsby118\obj\Debug\newsby118.pdb

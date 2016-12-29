@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data;
+using System.Web.SessionState;
 namespace DatabaseSupport
 {
-    public class LoginPreseter
+    public class LoginPreseter :IRequiresSessionState
     {
         public bool Login(String username,String password)
         {
@@ -15,7 +17,11 @@ namespace DatabaseSupport
             DataTable dt = DatabasePreseter.DBPreseter.SqlOperation(sql);
 
             if (dt.Rows.Count > 0 && dt.Rows[0]["password"].ToString() == password)
+            {
+                System.Web.HttpContext.Current.Session["User"] = dt;
+
                 return true;
+            }
             return false;
         }
     }

@@ -6,12 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/AdminLTE.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/AdminLTE.min.css"/>
     <link rel="stylesheet" href="css/mycss/global.css" />
-
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
     <style>
-        /*{border:1px solid !important;}*/
+        *{border:1px solid !important;}
         body{
 	    	background-color: #eef2f6;
 	    }  
@@ -50,10 +50,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-
-    
-
+    <form id="form1" runat="server" class="form-signin" role="form">
     <div class="myNavWrap">
 		<!-- <div class="row"> -->
 			<div class = "col-md-6 col-center-block myNav">
@@ -71,7 +68,7 @@
 		<!-- </div> -->
 	</div>		
 	<div style="clear: both;"></div>
-        </form>
+       
 	<div class="row">
         
 		<div class="col-md-6 col-center-block">
@@ -88,10 +85,10 @@
 		          <a class="navbar-brand" href="#">118新闻早知道</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
-		          <form class="navbar-form navbar-right">
+		          <div class="navbar-form navbar-right">
 		            <input type="text" class="form-control" placeholder="查找关键字..">
 		            <!-- <button type="submit" class="btn">查找</button> -->
-		          </form>
+		          </div>
 		        </div>
 		      </div>
 		    </nav>
@@ -106,20 +103,123 @@
               <li><a href="#">选项5</a></li>
             </ul>
          </div>
-
-            <div class="box box-primary" style="margin-bottom: 0px;">
+            <div class="box box-primary " style="margin-bottom: 0px;" >
 				<div class="box-header with-border ">
 		             <h6 id = "time" >2016年11月28日 20:06 衡阳 晴</h6>
 		        </div>
-		           <!-- 这里有很多文章-->    
+		        <div class="box-body">
+		        	
+					<div class="col-md-8">
+				          <div class="box box-default" style="width: 100%;">
+				            <div class="box-header with-border">
+				              <i class="fa fa-warning"></i>
+
+				              <h3 class="box-title">所有新闻列表（按时间排序）</h3>
+				            </div>
+				            <!-- /.box-header -->
+				            <div class="box-body">
+                                <!-----------------------------------------表格--------------------------------------->
+
+				                        <asp:GridView ID="gdv_newsList" runat="server" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="id" HeaderText="id" />
+                                                <asp:TemplateField HeaderText="标题">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="titleLink" OnClick="titleLink_Click" Text="newsTitle">title</asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+
+                                                <asp:BoundField DataField="buildTime" HeaderText="发布时间" />
+                                            </Columns>
+
+                                        </asp:GridView>
+
+                                <!-----------------------------------------表格--------------------------------------->
+				            </div>
+				            <!-- /.box-body -->
+				          </div>
+				          <!-- /.box -->
+				        </div>
+					
+					<div class="col-md-4">
+				          <div class="box box-default">
+				            <!-- /.box-header -->
+				            <div class="box-body">
+				              	<div class="box box-default">
+						            <div class="box-header with-border">
+						              <i class="fa fa-warning"></i>
+
+						              <h3 class="box-title">最新新闻（按时间排序）</h3>
+						            </div>
+						            <!-- /.box-header -->
+						            <div class="box-body">
+						              
+						               <!-----------------------------------------表格--------------------------------------->
+
+				                        <asp:GridView ID="gdv_newestNewsList" runat="server" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="id" HeaderText="id" />
+                                                <asp:TemplateField HeaderText="标题">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="titleLink" OnClick="titleLink_Click" Text="newsTitle">title</asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+
+                                            </Columns>
+
+                                        </asp:GridView>
+
+                                     <!-----------------------------------------表格--------------------------------------->
+						              
+						            </div>
+						            <!-- /.box-body -->
+						          </div>
+
+
+								<div class="box box-default">
+						            <div class="box-header with-border">
+						              <i class="fa fa-warning"></i>
+
+						              <h3 class="box-title">热点新闻（按点击量排序）</h3>
+						            </div>
+						            <!-- /.box-header -->
+						            <div class="box-body">
+						                   <!-----------------------------------------表格--------------------------------------->
+
+				                            <asp:GridView ID="gdv_hotNewsList" runat="server" AutoGenerateColumns="False">
+                                                <Columns>
+                                                    <asp:BoundField DataField="id" HeaderText="id" />
+                                                    <asp:TemplateField HeaderText="标题">
+                                                        <ItemTemplate>
+                                                            <asp:LinkButton runat="server" ID="titleLink" OnClick="titleLink_Click" Text="newsTitle">title</asp:LinkButton>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+                                                    <asp:BoundField DataField="pageviews" HeaderText="浏览量" />
+
+                                                </Columns>
+
+                                            </asp:GridView>
+
+                                         <!-----------------------------------------表格--------------------------------------->
+						            </div>
+						            <!-- /.box-body -->
+						          </div>
+
+				            </div>
+				            <!-- /.box-body -->
+				          </div>
+				          <!-- /.box -->
+				    </div>
+		        </div>
 		     </div>
 
-	    </div>
 
-        
+		     
+	    </div>
 		
 	</div>
-    
+</form>
 
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
