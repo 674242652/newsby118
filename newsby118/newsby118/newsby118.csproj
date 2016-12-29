@@ -383,6 +383,7 @@
     <Compile Include="Controllers\DatabaseConnection.cs" />
     <Compile Include="Controllers\DatabasePreseter.cs" />
     <Compile Include="Controllers\Entity\Article.cs" />
+    <Compile Include="Controllers\Entity\Comment.cs" />
     <Compile Include="Controllers\Entity\User.cs" />
     <Compile Include="Controllers\LoginPreseter.cs" />
     <Compile Include="Controllers\SearchPreseter.cs" />

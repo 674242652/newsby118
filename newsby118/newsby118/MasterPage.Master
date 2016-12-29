@@ -81,7 +81,7 @@
                                         <a href="#" class="btn btn-default btn-flat">个人信息</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">登出</a>
+                                        <a href="#" class="btn btn-default btn-flat">退出登录</a>
                                     </div>
                                 </li>
                             </ul>
@@ -122,6 +122,14 @@
 
                     <li><a href="#"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
                     <li><a href="#"><i class="fa fa-link"></i> <span>其他</span></a></li>
+                    
+                    <li>
+                        <asp:LinkButton ID="lbn_logout" runat="server" OnClick="lbn_logout_Click">
+                        <i class="fa fa-link"></i> <span>管理员退出</span>
+
+                        </asp:LinkButton>
+
+                    </li>
                 </ul>
             </section>
 

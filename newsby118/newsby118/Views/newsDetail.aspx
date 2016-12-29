@@ -90,7 +90,7 @@
 
 		    	<!-- 其他评论 -->
 
-		    	<div class="box" style="border-top:0; margin-bottom:0px;">
+		    	<div class="box" style="border-top:0; margin-bottom:0px;" id ="commentList">
 
 					<div class="direct-chat-msg">
 			            <div class="direct-chat-info clearfix">
@@ -102,6 +102,19 @@
 			                我觉得这篇文章好。
 			            </div>
             		</div>
+
+
+                    <div class="direct-chat-msg">
+			            <div class="direct-chat-info clearfix">
+			                <span class="direct-chat-name pull-left">游客</span>
+			                <span class="direct-chat-timestamp pull-right">2016年11月28日 22:20</span>
+			            </div>
+			              <img class="direct-chat-img" src="dist/img/user2-160x160.jpg" alt="message user image"/>
+			            <div class="direct-chat-text">
+			                我觉得这篇文章好。
+			            </div>
+            		</div>
+
 		    	</div> 
 
 				<!-- 发表评论，可以直接插入html中 -->
@@ -122,5 +135,32 @@
 
     <script src="js/jquery-2.2.3.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+        (function (){
+            var number = <%=allComment%>;
+
+            var username = new Array();
+            var commentTime = new Array();
+            var commentConnent = new Array();
+
+            <%for (int k = 0; k < allComment; k++){%>
+            username.push("<%=username[k]%>");
+            commentTime.push("<%=commentTime[k]%>");
+            commentConnent.push("<%=contentConnent[k]%>")
+            <%}%>  
+
+            var listValue = "";
+
+            for(var i=0;i<number;i++){
+               // var url = "http://118news/news/"+articleId[i]+".shtml"
+                //var hhref = "newsDetail.aspx?articleId="+articleId[i];
+                listValue+="<div class=\"direct-chat-msg\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-left\">"+username[i]+"</span><span class=\"direct-chat-timestamp pull-right\">"+commentTime[i]+"</span></div><img class=\"direct-chat-img\"src=\"dist/img/user2-160x160.jpg\" alt=\"message user image\"/><div class=\"direct-chat-text\">"+commentConnent[i]+"</div></div>";
+            }
+            // /alert(title[1]+"");
+            $('#commentList').html(listValue);
+        })();
+    </script>
 </body>
 </html>

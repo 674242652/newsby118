@@ -13,5 +13,11 @@ namespace newsby118
         {
 
         }
+
+        protected void lbn_logout_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Redirect("index.aspx");
+        }
     }
 }
