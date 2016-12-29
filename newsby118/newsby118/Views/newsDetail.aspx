@@ -43,8 +43,8 @@
 		        <div id="navbar" class="navbar-collapse collapse">
 
                     <div  class="navbar-form navbar-right">
-                    <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="按回车查找.."></asp:TextBox>
-		            <!-- <button type="submit" class="btn">查找</button> -->
+                    <asp:TextBox ID="txb_search" runat="server" class="form-control" placeholder="输入关键字.."></asp:TextBox>
+		            <asp:Button ID ="btn_search" runat="server" Text="查找" class="btn" OnClick="btn_search_Click"/>
 		            </div>
 
 		        </div>

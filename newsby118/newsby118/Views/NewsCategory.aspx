@@ -42,4 +42,9 @@
             
     	</div>
 	</div>
+    <script>
+
+        $('#sidebarItem20').addClass("active");
+        $('#sidebarItem21').addClass("active");
+     </script>
 </asp:Content>

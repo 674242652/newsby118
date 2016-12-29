@@ -371,6 +371,7 @@
     <Content Include="Views\showContenModel.html" />
     <Content Include="Views\NoAccess.html" />
     <Content Include="Views\Test.aspx" />
+    <Content Include="Views\UserWaitRegistered.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -471,6 +472,13 @@
     </Compile>
     <Compile Include="Views\Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserWaitRegistered.aspx.cs">
+      <DependentUpon>UserWaitRegistered.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UserWaitRegistered.aspx.designer.cs">
+      <DependentUpon>UserWaitRegistered.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

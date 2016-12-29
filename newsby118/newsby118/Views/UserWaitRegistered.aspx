@@ -1,37 +1,28 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="NewsList.aspx.cs" Inherits="newsby118.Views.NewsList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UserWaitRegistered.aspx.cs" Inherits="newsby118.Views.UserWaitRegistered" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-
-    
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-     <div class="col-center-block">
+    <div class="col-center-block">
 		    <div class="box">
 
                 <div class="box-header">
                     <h3 id="HTMLpageTitle" class="box-title" runat="server" >国内新闻列表</h3>
                  </div>
                 <div class="box-body no-padding">
-                <asp:GridView ID="articleList" runat="server" AutoGenerateColumns="False" class="table table-condensed" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="userList" runat="server" AutoGenerateColumns="False" class="table table-condensed" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="编号" />
 
-                        <asp:TemplateField HeaderText="标题">
-                            <ItemTemplate>
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("id","newsDetail.aspx?articleId={0}")%>' Text='<%# Eval("title") %>'></asp:HyperLink>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-
-                        <asp:BoundField DataField="buildtime" HeaderText="编辑日期" />
+                        <asp:BoundField DataField="username" HeaderText="用户名" />
+                        <asp:BoundField DataField="email" HeaderText="邮箱" />
                         <asp:TemplateField HeaderText="操作">
                             <ItemTemplate>
-                                <span class="badge bg-green"><asp:LinkButton runat="server" OnClick="Edit_Click" ForeColor="White">编辑</asp:LinkButton></span>
+                                <span class="badge bg-green"><asp:LinkButton runat="server" OnClick="Save_Click" ForeColor="White">允许</asp:LinkButton></span>
                                 <span class="badge bg-red">
-                                    <asp:LinkButton runat="server" OnClick="Delect_Click" OnClientClick="return confirm('确定删除吗？')"  ForeColor="White">删除</asp:LinkButton>
+                                    <asp:LinkButton runat="server" OnClick="Delect_Click" OnClientClick="return confirm('确定删除吗？')"  ForeColor="White">驳回</asp:LinkButton>
                                 </span>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -56,7 +47,10 @@
     
      <script>
 
-          $('#sidebarItem20').addClass("active");
-          $('#sidebarItem22').addClass("active");
+         $('#sidebarItem20').addClass("active");
+         $('#sidebarItem22').addClass("active");
      </script>
+
+
+
 </asp:Content>

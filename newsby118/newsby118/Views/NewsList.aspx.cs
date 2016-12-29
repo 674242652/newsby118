@@ -64,13 +64,6 @@ namespace newsby118.Views
         {
             articleList.DataSource = dt;
             articleList.DataBind();
-
-            for (int i = 0; i < articleList.Rows.Count; i++)
-            {
-                //为具体类别绑定数据名
-                LinkButton lb = (LinkButton)articleList.Rows[i].FindControl("titleLink");
-                lb.Text = dt.Rows[i]["title"].ToString();
-            }
         }
         private void setPageTitle()
         {

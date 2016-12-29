@@ -14,6 +14,8 @@ namespace newsby118.front
         String _articleId = "1";
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             String articleId = Request.QueryString["articleId"];
             _articleId = (articleId == "" || articleId == null) ? "1" : articleId;
             Article article = ArticlesPreseter.GetArticleById(_articleId);
@@ -22,6 +24,9 @@ namespace newsby118.front
             lab_title.Text = article.Title;
             lab_time.Text = article.Buildtime;
             content.InnerHtml = article.Content;
+
+
+            ArticlesPreseter.UpdatePageViews(_articleId);
         }
         /**
          * 提交评论按钮
@@ -50,6 +55,13 @@ namespace newsby118.front
             }
            
             
+        }
+
+        protected void btn_search_Click(object sender, EventArgs e)
+        {
+            String keyword = txb_search.Text.ToString();
+            Response.Redirect("SearchResult.aspx?keyword="+keyword);
+
         }
     }
 }

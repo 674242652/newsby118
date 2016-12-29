@@ -61,6 +61,14 @@ namespace DatabaseSupport
         /**
          * 删除指定ID的文章
          **/
+
+        public static void UpdatePageViews(String id)
+        {
+            String sql = "update article set pageviews=pageviews+1 where id = '" + id + "'";
+            DatabasePreseter.DBPreseter.SqlOperation(sql);
+        }
+
+
         public static bool DelectArticleById(String id)
         {
              String sql = "delete article where id='" + id + "'";

@@ -22,6 +22,9 @@
          });
     </script>
 
+
+    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -96,5 +99,8 @@
         });
     </script>
 
+    <script>
+        document.getElementById('sidebarItem11').className = "active";
+    </script>
 
 </asp:Content>

@@ -45,10 +45,42 @@ namespace WebApplication4.front
         //这里需要深克隆
         private void GridViewBindDetial(GridView gdv,DataTable dt)
         {
-
             gdv.DataSource = dt;
             gdv.DataBind();
         }
+
+
+        protected void gdv_newsList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gdv_newsList.PageIndex = e.NewPageIndex;
+            GridViewBindDetial(gdv_newsList,ArticlesPreseter.GetAllArticles());
+        }
+
+        protected void gdv_newestNewsList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+            gdv_newestNewsList.PageIndex = e.NewPageIndex;
+            DataTable newest_dt = ArticlesPreseter.GetAllArticles();
+            DataView newest_dv = newest_dt.DefaultView;
+            newest_dv.Sort = "id ASC";     //按id字段的正序排序
+            //dv.Sort = "id DESC";  //按逆序排序
+            newest_dt = newest_dv.ToTable();
+            GridViewBindDetial(gdv_newestNewsList, newest_dt);//最新新闻列表
+        }
+
+        protected void gdv_hotNewsList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gdv_hotNewsList.PageIndex = e.NewPageIndex;
+
+
+            DataTable hot_dt = ArticlesPreseter.GetAllArticles();
+            DataView hot_dv = hot_dt.DefaultView;
+            hot_dv.Sort = "pageviews ASC";     //按id字段的正序排序
+            //dv.Sort = "id DESC";  //按逆序排序
+            hot_dt = hot_dv.ToTable();
+            GridViewBindDetial(gdv_hotNewsList, hot_dt);//最新新闻列表
+        }
+
 
     }
 }
