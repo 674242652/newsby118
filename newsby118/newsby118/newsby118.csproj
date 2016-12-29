@@ -133,7 +133,6 @@
     <Content Include="Views\dist\js\pages\dashboard.js" />
     <Content Include="Views\dist\js\pages\dashboard2.js" />
     <Content Include="Views\FileNotFond.html" />
-    <Content Include="Views\editnews.aspx" />
     <Content Include="Views\img\blue%402x.png" />
     <Content Include="Views\img\blue.png" />
     <Content Include="Views\img\file\dir.png" />
@@ -401,13 +400,6 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Views\editnews.aspx.cs">
-      <DependentUpon>editnews.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\editnews.aspx.designer.cs">
-      <DependentUpon>editnews.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

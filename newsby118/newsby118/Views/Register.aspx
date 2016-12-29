@@ -30,38 +30,36 @@
 <form id="form1" runat="server" class="form-signin" role="form">
 
       <div class="form-group has-feedback">
-         <asp:TextBox ID="txb_username" runat="server" class="form-control" placeholder="用户名"></asp:TextBox>
+         <asp:TextBox ID="txb_username" OnChange="Added()" runat="server" class="form-control" placeholder="用户名"></asp:TextBox>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
 
-        <asp:TextBox ID="txb_email" runat="server" class="form-control" placeholder="邮箱"></asp:TextBox>
+        <asp:TextBox ID="txb_email" OnChange="Added1()" runat="server" class="form-control" placeholder="邮箱"></asp:TextBox>
 
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
       </div>
       <div class="form-group has-feedback">
 
-          <asp:TextBox ID="txb_password" runat="server" class="form-control" placeholder="请输入密码"></asp:TextBox>
+          <asp:TextBox ID="txb_password" OnChange="Added()" runat="server" class="form-control" placeholder="请输入密码" TextMode="Password" ></asp:TextBox>
 
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-          <asp:TextBox ID="txb_re_password" runat="server" class="form-control" placeholder="再输入一次密码"></asp:TextBox>
+          <asp:TextBox ID="txb_re_password" OnChange="Added2()" runat="server" class="form-control" placeholder="再输入一次密码" TextMode="Password"  ></asp:TextBox>
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-                
-            </label>
+            <label id="msg" style="color:red"></label>
           </div>
             
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <asp:Button ID="btn_register" runat="server" Text="注册" class="btn btn-primary btn-block btn-flat"/>
+          <asp:Button ID="btn_register" runat="server" Text="注册" class="btn btn-primary btn-block btn-flat" OnClick="btn_register_Click"/>
         </div>
         <!-- /.col -->
           
@@ -78,5 +76,52 @@
 <script src="js/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn_register').attr('disabled', true);
+            $('#btn_register').click(function () {
+                if ('注册成功') {
+                    confirm('申请成功,等待管理员审核....');
+                }
+            });
+        });
+        function checkEmail(szMail) {
+            var szReg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+            var bChk = szReg.test(szMail);
+            return bChk;
+        }
+        function Added() {
+            var text1 = document.getElementById("<%=txb_username.ClientID%>").value;
+            var text2 = document.getElementById("<%=txb_email.ClientID%>").value;
+            var text3 = document.getElementById("<%=txb_password.ClientID%>").value;
+            var text4 = document.getElementById("<%=txb_re_password.ClientID%>").value;
+
+            if (text1 != "" && text2 != "" && text3 != "" && text4 != "") {
+                $('#btn_register').attr('disabled', false);
+            }
+        }
+        function Added1() {
+            var email = $('#txb_email').val();
+            if (!checkEmail(email)) {
+                //提示邮箱格式不正确
+                $('#msg').text('请输入正确的邮箱！');
+            } else {
+                $('#msg').text('');
+                Added();
+            }
+        }
+        function Added2() {
+            var text3 = document.getElementById("<%=txb_password.ClientID%>").value;
+            var text4 = document.getElementById("<%=txb_re_password.ClientID%>").value;
+            if (text3 != text4) {
+                $('#msg').text('密码不一致！');
+            } else {
+                $('#msg').text('');
+                Added();
+            }
+        }
+
+    </script>
+
 </body>
 </html>
