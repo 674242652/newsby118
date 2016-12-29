@@ -48,23 +48,6 @@ namespace WebApplication4.front
 
             gdv.DataSource = dt;
             gdv.DataBind();
-
-            for (int i = 0; i < gdv.Rows.Count; i++)
-            {
-                //为具体类别绑定数据名
-                LinkButton lb = (LinkButton)gdv.Rows[i].FindControl("titleLink");
-                lb.Text = dt.Rows[i]["title"].ToString();
-            }
-            //影藏第一列，但是我需要从这里获取ID
-
-            gdv.Columns[0].Visible = false;
-        }
-        protected void titleLink_Click(object sender, EventArgs e)
-        {
-            int row = ((GridViewRow)((LinkButton)sender).NamingContainer).RowIndex;
-            String id = (gdv_newsList.Rows[row].Cells[0]).Text.ToString().Trim();
-            //Response.Write("<script>alert('" + id + "')</script>");
-            Response.Redirect("newsDetail.aspx?articleId=" + id);
         }
 
     }

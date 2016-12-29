@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/mycss/global.css" />
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
     <style>
-        *{border:1px solid !important;}
+        /*{border:1px solid !important;}*/
         body{
 	    	background-color: #eef2f6;
 	    }  
@@ -71,7 +71,7 @@
        
 	<div class="row">
         
-		<div class="col-md-6 col-center-block">
+		<div class="col-md-8 col-center-block">
 			
 			<nav class="navbar navbar-default" style="margin-bottom: 0px; background-color: white; ">
 		      <div class="container-fluid">
@@ -112,7 +112,7 @@
 					<div class="col-md-8">
 				          <div class="box box-default" style="width: 100%;">
 				            <div class="box-header with-border">
-				              <i class="fa fa-warning"></i>
+				              <i class="fa fa-newspaper-o"></i>
 
 				              <h3 class="box-title">所有新闻列表（按时间排序）</h3>
 				            </div>
@@ -120,16 +120,16 @@
 				            <div class="box-body">
                                 <!-----------------------------------------表格--------------------------------------->
 
-				                        <asp:GridView ID="gdv_newsList" runat="server" AutoGenerateColumns="False">
+				                        <asp:GridView ID="gdv_newsList" runat="server" AutoGenerateColumns="False" Width="100%">
                                             <Columns>
-                                                <asp:BoundField DataField="id" HeaderText="id" />
+                                                
                                                 <asp:TemplateField HeaderText="标题">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="titleLink" OnClick="titleLink_Click" Text="newsTitle">title</asp:LinkButton>
+                                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("id","newsDetail.aspx?articleiId={0}")%>' Text='<%# Eval("title") %>'></asp:HyperLink>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-
                                                 <asp:BoundField DataField="buildTime" HeaderText="发布时间" />
+                                                
                                             </Columns>
 
                                         </asp:GridView>
@@ -147,9 +147,9 @@
 				            <div class="box-body">
 				              	<div class="box box-default">
 						            <div class="box-header with-border">
-						              <i class="fa fa-warning"></i>
+						              <i class="fa fa-clock-o"></i>
 
-						              <h3 class="box-title">最新新闻（按时间排序）</h3>
+						              <h3 class="box-title">最新新闻</h3>
 						            </div>
 						            <!-- /.box-header -->
 						            <div class="box-body">
@@ -158,10 +158,9 @@
 
 				                        <asp:GridView ID="gdv_newestNewsList" runat="server" AutoGenerateColumns="False">
                                             <Columns>
-                                                <asp:BoundField DataField="id" HeaderText="id" />
                                                 <asp:TemplateField HeaderText="标题">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="titleLink" OnClick="titleLink_Click" Text="newsTitle">title</asp:LinkButton>
+                                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("id","newsDetail.aspx?articleiId={0}")%>' Text='<%# Eval("title") %>'></asp:HyperLink>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
@@ -178,9 +177,9 @@
 
 								<div class="box box-default">
 						            <div class="box-header with-border">
-						              <i class="fa fa-warning"></i>
+						              <i class="fa fa-fire" aria-hidden="true"></i>
 
-						              <h3 class="box-title">热点新闻（按点击量排序）</h3>
+						              <h3 class="box-title">热点新闻</h3>
 						            </div>
 						            <!-- /.box-header -->
 						            <div class="box-body">
@@ -188,12 +187,11 @@
 
 				                            <asp:GridView ID="gdv_hotNewsList" runat="server" AutoGenerateColumns="False">
                                                 <Columns>
-                                                    <asp:BoundField DataField="id" HeaderText="id" />
                                                     <asp:TemplateField HeaderText="标题">
-                                                        <ItemTemplate>
-                                                            <asp:LinkButton runat="server" ID="titleLink" OnClick="titleLink_Click" Text="newsTitle">title</asp:LinkButton>
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("id","newsDetail.aspx?articleiId={0}")%>' Text='<%# Eval("title") %>'></asp:HyperLink>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
 
                                                     <asp:BoundField DataField="pageviews" HeaderText="浏览量" />
 
