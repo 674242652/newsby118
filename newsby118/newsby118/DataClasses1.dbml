@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="newsReleaseSystem" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost;Initial Catalog=newsReleaseSystem;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="newsReleaseSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.comment" Member="comment">
+    <Type Name="comment">
+      <Column Name="id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="userId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="articleId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="buildtime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
