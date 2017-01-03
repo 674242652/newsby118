@@ -73,8 +73,8 @@
               <div class="pull-right">
                 <asp:Button ID="btn_finish" runat="server" Text="确认发布" class="btn btn-primary" OnClientClick="ClientClick();"  OnClick="btn_finish_Click"/>
               </div>
-              <button id="btn_revoked" class="btn btn-default" runat="server" onserverclick="Revoked_Click"><i class="fa fa-times"></i> 撤销</button>
-              <button id="btn_tempSave"  class="btn btn-default" runat="server" onserverclick="TempSave_Click"><i class="fa fa-clipboard"></i> 暂存</button>
+              <button runat="server" id="btn_revoked" class="btn btn-default" onserverclick="Revoked_Click"><i class="fa fa-times"></i> 撤销</button>
+              <button runat="server"  id="btn_tempSave"  class="btn btn-default" onserverclick="TempSave_Click"><i class="fa fa-clipboard"></i> 暂存</button>
                 
             </div>
             </div>
@@ -97,6 +97,17 @@
             lab_file.html(file.name);
             //console.log(file.name);
         });
+
+        function Revoked_Click(){
+           
+        }
+
+
+        function TempSave_Click() {
+           
+        }
+        
+
     </script>
 
     <script>

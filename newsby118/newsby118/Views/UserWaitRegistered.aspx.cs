@@ -51,7 +51,7 @@ namespace newsby118.Views
         }
         private void setPageTitle()
         {
-            HTMLpageTitle.InnerHtml = "待允许注册用户列表";
+            HTMLpageTitle.InnerHtml = "待审核注册用户列表";
 
         }
 

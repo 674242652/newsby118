@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\CommentList.aspx" />
     <Content Include="Views\css\AdminLTE.min.css" />
     <Content Include="Views\css\blue.css" />
     <Content Include="Views\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
@@ -376,7 +377,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassLibrary\AbstractUser.cs" />
     <Compile Include="ClassLibrary\ArticleMemento.cs" />
+    <Compile Include="ClassLibrary\ContentBuilder.cs" />
     <Compile Include="Controllers\ArticlesPreseter.cs" />
     <Compile Include="Controllers\ClassificationPreseter.cs" />
     <Compile Include="Controllers\CommentPreseter.cs" />
@@ -384,23 +387,30 @@
     <Compile Include="Controllers\DatabasePreseter.cs" />
     <Compile Include="Controllers\Entity\Article.cs" />
     <Compile Include="Controllers\Entity\Comment.cs" />
+    <Compile Include="ClassLibrary\ProxyUser.cs" />
+    <Compile Include="ClassLibrary\RealUser.cs" />
     <Compile Include="Controllers\Entity\User.cs" />
     <Compile Include="Controllers\LoginPreseter.cs" />
     <Compile Include="Controllers\SearchPreseter.cs" />
     <Compile Include="Controllers\UserPreseter.cs" />
     <Compile Include="ClassLibrary\MementoCaretaker.cs" />
     <Compile Include="ClassLibrary\PresentArticle.cs" />
-    <Compile Include="DataClasses1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </Compile>
+    <Compile Include="ClassLibrary\DetailBuilder.cs" />
+    <Compile Include="Controllers\Entity\DetailPageContent.cs" />
+    <Compile Include="ClassLibrary\DetailPageContentDirector.cs" />
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommentList.aspx.cs">
+      <DependentUpon>CommentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CommentList.aspx.designer.cs">
+      <DependentUpon>CommentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -526,11 +536,8 @@
     <Content Include="Views\kindeditor\php\upload_json.php" />
     <Content Include="ClassLibrary\ArticleSaveAndRestore.cd" />
     <Content Include="MasterPage.Master" />
-    <Content Include="DataClasses1.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="ClassLibrary\Proxy.cd" />
+    <Content Include="ClassLibrary\DetailPageContent.cd" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -540,11 +547,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

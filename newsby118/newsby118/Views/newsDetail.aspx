@@ -37,7 +37,7 @@
 		              <span class="icon-bar"></span>
 		              <span class="icon-bar"></span>
             		</button>
-		          <a class="navbar-brand" href="#">118新闻早知道</a>
+		          <a class="navbar-brand" href="index.aspx">118新闻早知道</a>
                     
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">

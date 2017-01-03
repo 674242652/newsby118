@@ -61,7 +61,12 @@ namespace DatabaseSupport
         /**
          * 删除指定ID的文章
          **/
-
+        public static void UpdataArticleAllMes(Article article)
+        {
+            String[] msg = article.FieldsToString();
+            String sql = string.Format("update article set title='{0}',summary='{1}',content='{2}',buildtime='{3}',filesURL='{4}',classification={5} where id = '{6}'", msg[1], msg[2], msg[3], msg[4], msg[5], msg[6],msg[0]);
+            DatabasePreseter.DBPreseter.SqlOperation(sql);
+        }
         public static void UpdatePageViews(String id)
         {
             String sql = "update article set pageviews=pageviews+1 where id = '" + id + "'";

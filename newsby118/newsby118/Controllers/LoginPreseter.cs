@@ -10,7 +10,7 @@ namespace DatabaseSupport
 {
     public class LoginPreseter :IRequiresSessionState
     {
-        public bool Login(String username,String password)
+        public int Login(String username,String password)
         {
             //此处需要防止sql注入
             String sql = "select * from [user] where username = '" + username + "\'";
@@ -19,10 +19,10 @@ namespace DatabaseSupport
             if (dt.Rows.Count > 0 && dt.Rows[0]["password"].ToString() == password)
             {
                 System.Web.HttpContext.Current.Session["User"] = dt;
-
-                return true;
+                int type = (int)dt.Rows[0]["category"];
+                return type;
             }
-            return false;
+            return -1;
         }
     }
 }

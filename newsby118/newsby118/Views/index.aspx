@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>118新闻</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/AdminLTE.min.css"/>
     <link rel="stylesheet" href="css/mycss/global.css" />
@@ -60,7 +60,9 @@
 					<li><a>国内</a></li>
 				</ul>
                 <div style="float:right;display:inline-block;line-height:28px;">
-                    <asp:LinkButton ID="btn_login" runat="server">登录</asp:LinkButton>
+                    <asp:LinkButton ID="btn_registered" runat="server" onclick="btn_registered_Click">注册</asp:LinkButton>
+                    <asp:LinkButton ID="btn_login" runat="server" OnClick="btn_login_Click">登录</asp:LinkButton>
+                    <asp:LinkButton ID="btn_logout" runat="server" OnClick="btn_logout_Click">退出登录</asp:LinkButton>
                 </div>
 			</div>
 
@@ -85,9 +87,9 @@
 		          <a class="navbar-brand" href="#">118新闻早知道</a>
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
-		          <div class="navbar-form navbar-right">
-		            <input type="text" class="form-control" placeholder="查找关键字..">
-		            <!-- <button type="submit" class="btn">查找</button> -->
+		          <div  class="navbar-form navbar-right">
+                    <asp:TextBox ID="txb_search" runat="server" class="form-control" placeholder="输入关键字.."></asp:TextBox>
+		            <asp:Button ID ="btn_search" runat="server" Text="查找" class="btn" OnClick="btn_search_Click"/>
 		          </div>
 		        </div>
 		      </div>
@@ -105,7 +107,7 @@
          </div>
             <div class="box box-primary " style="margin-bottom: 0px;" >
 				<div class="box-header with-border ">
-		             <h6 id = "time" >2016年11月28日 20:06 衡阳 晴</h6>
+		             <h6 id = "time" runat="server">2016年11月28日 20:06 衡阳 晴</h6>
 		        </div>
 		        <div class="box-body">
 		        	
@@ -121,7 +123,7 @@
                                 <!-----------------------------------------表格--------------------------------------->
 
 				                        <asp:GridView ID="gdv_newsList" runat="server" AutoGenerateColumns="False" Width="100%" AllowPaging="True"
-                                             PageSize="20" OnPageIndexChanging="gdv_newsList_PageIndexChanging">
+                                             PageSize="20" OnPageIndexChanging="gdv_newsList_PageIndexChanging" OnRowCommand="gdv_newsList_RowCommand">
                                             <Columns>
                                                 
                                                 <asp:TemplateField HeaderText="标题">
@@ -132,6 +134,17 @@
                                                 <asp:BoundField DataField="buildTime" HeaderText="发布时间" />
                                                 
                                             </Columns>
+     <PagerTemplate>
+        <br />
+         <asp:Label ID="lblPage" runat="server" Text='<%# "第" + (((GridView)Container.NamingContainer).PageIndex + 1)  + "页/共" + (((GridView)Container.NamingContainer).PageCount) + "页" %> '></asp:Label>
+         <asp:LinkButton ID="lbnFirst" runat="Server" Text="首页"  Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="First" ></asp:LinkButton>
+        <asp:LinkButton ID="lbnPrev" runat="server" Text="上一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="Prev"  ></asp:LinkButton>
+        <asp:LinkButton ID="lbnNext" runat="Server" Text="下一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Next" ></asp:LinkButton>
+         <asp:LinkButton ID="lbnLast" runat="Server" Text="尾页"   Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Last" ></asp:LinkButton> <asp:TextBox runat="server" ID="inPageNum"></asp:TextBox>
+        <asp:Button ID="Button1" CommandName="go" runat="server" Text="跳转" class="btn btn-default"/>
+         <br />
+     </PagerTemplate>
+
 
                                         </asp:GridView>
 
@@ -158,7 +171,7 @@
 						               <!-----------------------------------------表格--------------------------------------->
 
 				                        <asp:GridView ID="gdv_newestNewsList" runat="server" AutoGenerateColumns="False" Width="100%" AllowPaging="True"
-                                             PageSize="5" OnPageIndexChanging="gdv_newestNewsList_PageIndexChanging">
+                                             PageSize="5" OnPageIndexChanging="gdv_newestNewsList_PageIndexChanging" OnRowCommand="gdv_newestNewsList_RowCommand">
                                             <Columns>
                                                 <asp:TemplateField HeaderText="标题">
                                                     <ItemTemplate>
@@ -167,7 +180,17 @@
                                                 </asp:TemplateField>
 
                                             </Columns>
-
+   <PagerTemplate>
+        <br />
+         <asp:Label ID="lblPage" runat="server" Text='<%# "第" + (((GridView)Container.NamingContainer).PageIndex + 1)  + "页/共" + (((GridView)Container.NamingContainer).PageCount) + "页" %> '></asp:Label>
+       <br/>
+         <asp:LinkButton ID="lbnFirst" runat="Server" Text="首页"  Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="First" ></asp:LinkButton>
+        <asp:LinkButton ID="lbnPrev" runat="server" Text="上一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != 0 %>' CommandName="Page" CommandArgument="Prev"  ></asp:LinkButton>
+        <asp:LinkButton ID="lbnNext" runat="Server" Text="下一页" Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Next" ></asp:LinkButton>
+         <asp:LinkButton ID="lbnLast" runat="Server" Text="尾页"   Enabled='<%# ((GridView)Container.NamingContainer).PageIndex != (((GridView)Container.NamingContainer).PageCount - 1) %>' CommandName="Page" CommandArgument="Last" ></asp:LinkButton> <asp:TextBox runat="server" ID="inPageNum"></asp:TextBox>
+        <asp:Button ID="Button1" CommandName="go" runat="server" Text="跳转"/>
+         <br />
+     </PagerTemplate>
                                         </asp:GridView>
 
                                      <!-----------------------------------------表格--------------------------------------->

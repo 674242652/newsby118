@@ -23,11 +23,24 @@ namespace newsby118.Views
             {
                 dt = ArticlesPreseter.GetAllArticles();
                 _classId = -1;
+
+                DataTable newest_dt = dt.Copy();
+                DataView newest_dv = newest_dt.DefaultView;
+                newest_dv.Sort = "id DESC";     //按id字段的逆序排序
+                //dv.Sort = "id ASC";  //按正排序
+                newest_dt = newest_dv.ToTable();
+                dt = newest_dt;
             }
             else
             {
                 _classId = int.Parse(classid);
-                dt = ArticlesPreseter.GetArticleByClassification(_classId);
+                dt = ArticlesPreseter.GetArticleByClassification(_classId).Copy();
+                DataTable newest_dt = dt.Copy();
+                DataView newest_dv = newest_dt.DefaultView;
+                newest_dv.Sort = "id DESC";     //按id字段的逆序排序
+                //dv.Sort = "id ASC";  //按正排序
+                newest_dt = newest_dv.ToTable();
+                dt = newest_dt;
             }
 
 

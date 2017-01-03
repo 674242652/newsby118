@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="NewsList.aspx.cs" Inherits="newsby118.Views.NewsList" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="CommentList.aspx.cs" Inherits="newsby118.Views.CommentList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 
@@ -20,16 +20,16 @@
                     <Columns>
                         <asp:BoundField DataField="id" HeaderText="编号" />
 
-                        <asp:TemplateField HeaderText="标题">
+                        <asp:TemplateField HeaderText="评论新闻">
                             <ItemTemplate>
-                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("id","newsDetail.aspx?articleId={0}")%>' Text='<%# Eval("title") %>'></asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("articleId","newsDetail.aspx?articleId={0}")%>' Text='<%# Eval("articleId") %>'></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField DataField="buildtime" HeaderText="编辑日期" />
+                        <asp:BoundField DataField="content" HeaderText="内容" />
+                        <asp:BoundField DataField="buildTime" HeaderText="评论日期" />
                         <asp:TemplateField HeaderText="操作">
                             <ItemTemplate>
-                                <span class="badge bg-green"><asp:LinkButton runat="server" OnClick="Edit_Click" ForeColor="White">编辑</asp:LinkButton></span>
                                 <span class="badge bg-red">
                                     <asp:LinkButton runat="server" OnClick="Delect_Click" OnClientClick="return confirm('确定删除吗？')"  ForeColor="White">删除</asp:LinkButton>
                                 </span>
@@ -55,7 +55,8 @@
 	    </div>
     
      <script>
-          $('#sidebarItem20').addClass("active");
-          $('#sidebarItem22').addClass("active");
+
+         $('#sidebarItem20').addClass("active");
+         $('#sidebarItem23').addClass("active");
      </script>
 </asp:Content>

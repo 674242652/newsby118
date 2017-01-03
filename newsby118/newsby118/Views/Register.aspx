@@ -25,7 +25,7 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">新用户注册</p>
+    <p class="login-box-msg" runat="server" id="pageTitle">新用户注册</p>
 
 <form id="form1" runat="server" class="form-signin" role="form">
 
@@ -64,9 +64,9 @@
         <!-- /.col -->
           
       </div>
+    
+      <asp:LinkButton ID="lbt_login" runat="server" class="text-center" href="login.aspx"> 我已经有账号了，直接登录</asp:LinkButton>
 </form>
-
-    <a href="login.aspx" class="text-center">我已经有账号了，直接登录</a>
   </div>
   <!-- /.form-box -->
 </div>

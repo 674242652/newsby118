@@ -16,12 +16,10 @@ namespace newsby118.Views
 
 
         String _articleId = null;
+        bool isReEdit = false;
         //备忘录的负责人和原发器
         MementoCaretaker mementCaretaker = new MementoCaretaker();
         PresentArticle now_article = new PresentArticle();
-
-
-
         private void bindDropListData()
         {
             DataTable dt = ClassificationPreseter.GetAllClassificatiion();
@@ -50,14 +48,14 @@ namespace newsby118.Views
 
                 //Response.Write("<script>alert('" + thisArt.Title + "')</script>");
 
-
                 now_article.state = ArticlesPreseter.GetArticleById(_articleId); 
                 //备忘录模式的原发器对象
                 mementCaretaker.articleMemento = now_article.SaveArticleMemento();
 
-
                 //更新
                 updateView(now_article.state);
+                //updateView(ArticlesPreseter.GetArticleById(_articleId));
+                isReEdit = true;
             }
             else
             {
@@ -69,11 +67,12 @@ namespace newsby118.Views
 
 
         }
-        private void updateView(Article article)
+        //private void updateView(Article article)
+        private void updateView(Article dt)
         {
-            
-            txb_title.Text = article.Title;
-            compose_textarea.Text = article.Content;
+
+            txb_title.Text = dt.Title;
+            compose_textarea.Text = dt.Content;
         }
         private void InsertArticle()
         {
@@ -84,7 +83,7 @@ namespace newsby118.Views
 
 
             Article article = new Article();
-            article.Id = date.ToString("yyyyMMddhhmmssfff");               //ID
+            article.Id = date.ToString("yyyyMMddhhmmssfff");            //ID
             article.Title = title;                                      //title
             article.Summary = getSummary(content);                      //summary
             article.Content = content;                                  //content
@@ -98,9 +97,42 @@ namespace newsby118.Views
 
             ArticlesPreseter.InsertArticles(article);
         }
+        private void UpdateArticle()
+        {
+            String title = txb_title.Text;//标题
+            String content = compose_textarea.Text; //内容
+            //Response.Write(content);
+            DateTime date = DateTime.Now; //时间
+            
+
+            Article article = new Article();
+            article.Id = _articleId;                                    //ID
+            article.Title = title;                                      //title
+            article.Summary = getSummary(content);                      //summary
+            article.Content = content;                                  //content
+            article.Buildtime = date.ToString("yyyy-MM-dd hh:mm:ss.fff");   //buildtime
+
+            Response.Write("<script>alert('" + article.Buildtime + "')</script>");
+            article.FilesURL = new String[2];                           //文件信息                                                 
+            article.Classification = getArticleType();                  //分类
+            article.Pageviews = 0;                                      //流浪量
+            article.PraiseNumber = 0;                                   //点赞
+
+            //ArticlesPreseter.UpdataArticleAllMes(article);
+        }
         protected void btn_finish_Click(object sender, EventArgs e)
         {
-            InsertArticle();
+            if (isReEdit)
+            {
+                Response.Write("<script>alert('" + txb_title.Text.ToString() + "')</script>");
+                UpdateArticle();
+            }
+            else
+            {
+                InsertArticle();
+            }
+
+           
             // Response.Write("<script>alert('" + content + "')</script>");
         }
 
@@ -122,7 +154,7 @@ namespace newsby118.Views
             //更新
             updateView(now_article.state);
         }
-
+        
         private String getArticleType()
         {
             String classification = ddl_articleType.SelectedValue; //类别

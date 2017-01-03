@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>118新闻管理界面</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">-->
@@ -117,15 +117,37 @@
                             <li id="sidebarItem22">
                                 <asp:LinkButton ID="newsList" runat="server" href="NewsList.aspx">新闻列表</asp:LinkButton>
                             </li>
+                            <li id="sidebarItem23">
+                                <!--<a href="#">新闻类别管理</a>-->
+                                <asp:LinkButton ID="LinkButton1" runat="server" href="CommentList.aspx">评论管理</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview" id="sidebarItem30">
+                        <a href="#">
+                            <i class="fa fa-user"></i> <span>人员管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="sidebarItem31">
+                                <!--<a href="#">新闻类别管理</a>-->
+                                <asp:LinkButton ID="userRegist" runat="server" href="UserWaitRegistered.aspx">待审核注册人员</asp:LinkButton>
+                            </li>
+                            
                         </ul>
                     </li>
 
-                    <li><a href="#"><i class="fa fa-user"></i> <span>人员管理</span></a></li>
+
+
+
+
                     <li><a href="#"><i class="fa fa-link"></i> <span>其他</span></a></li>
                     
                     <li>
                         <asp:LinkButton ID="lbn_logout" runat="server" OnClick="lbn_logout_Click">
-                        <i class="fa fa-link"></i> <span>管理员退出</span>
+                        <i class="fa fa-reply"></i> <span>管理员退出</span>
 
                         </asp:LinkButton>
 
@@ -138,8 +160,8 @@
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
-                    Page Header
-                    <small>Optional description</small>
+                    118新闻
+                    <small>操作台</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>

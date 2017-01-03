@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DatabaseSupport.Entity.DetailPageContent">
+    <Position X="7" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAEAAAAEAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Entity\DetailPageContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsby118.AbstractContentBuilder">
+    <Position X="7" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAABEAAAAAAAAABAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ClassLibrary\ContentBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="detailPageContent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="newsby118.DetailBuilder">
+    <Position X="7.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassLibrary\DetailBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="newsby118.DetailPageContentDirector">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAACAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ClassLibrary\DetailPageContentDirector.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="contentBuilder" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

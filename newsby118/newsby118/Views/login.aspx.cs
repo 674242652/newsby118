@@ -21,11 +21,18 @@ namespace WebApplication4.front
             String pwd = txt_password.Text;
 
             LoginPreseter lp = new LoginPreseter();
-            bool res = lp.Login(usr,pwd);
+            int res = lp.Login(usr,pwd);
 
-            if (res){
-
-                Response.Redirect("NewsList.aspx");
+            if (res!=-1){
+                if (res == 0)
+                {
+                    Response.Redirect("NewsList.aspx");
+                }
+                else
+                {
+                    Response.Redirect("index.aspx");
+                }
+                
             }
             else
             {
